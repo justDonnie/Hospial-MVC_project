@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>New Hospital</title>
+</head>
+<style>
+    .formSection {
+        position: relative;
+        left: 25px;
+        width: 50%;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        padding: 50px;
+        background-image: url("https://www.pngitem.com/pimgs/m/87-872503_my-health-record-hospital-icon-transparent-background-hd.png");
+        background-size: cover;
+        background-position: center;
+        font-size: 2rem;
+    }
+
+    button {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+    }
+    input {
+        font-size: 2rem;
+        background-color: whitesmoke;
+        color: black;
+        border-radius: 10px;
+    }
+
+
+    .btnGreen {
+        background: chartreuse;
+        color: black;
+        font-size: 2rem;
+        border-radius: 12px;
+        cursor: pointer;
+    }
+
+    .btnGreen:hover {
+        background-color: black;
+        color: aliceblue;
+    }
+
+</style>
+<body>
+<div class="formSection">
+    <form th:method="POST" th:action="@{save}" th:object="${newHospital}">
+        <div>
+            <label for="name">Name</label> <br>
+            <input type="text" th:field="*{name}" id="name" th:placeholder=" State-Hospital ">
+        </div>
+        <br>
+        <div>
+            <label for="address">Address</label> <br>
+            <input type="text" th:field="*{address}" id="address">
+        </div>
+        <br>
+        <div>
+            <label for="image">Image</label> <br>
+            <input type="text" th:field="*{image}" id="image">
+        </div>
+        <br>
+        <br>
+        <button class="btnGreen" type="submit">Save Hospital</button>
+    </form>
+</div>
+</body>
+</html>

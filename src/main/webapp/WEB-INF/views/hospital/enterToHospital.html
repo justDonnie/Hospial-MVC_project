@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en"xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Hospitals</title>
+</head>
+<body>
+
+
+<nav>
+    <ul>
+        <li><a th:href="@{/departments/{hospId}(hospId=${hospital.getId()})}">Departments</a></li>
+        <li><a href="#doctors">Doctors</a></li>
+        <li><a href="#patients">Patients</a></li>
+        <li><a href="#appointments">Appointments</a></li>
+    </ul>
+</nav>
+
+
+
+<!--<section id="{hospId}/department/departments/allDepartment">-->
+<!--    <h2>Departments</h2>-->
+<!--    &lt;!&ndash; Здесь вы можете добавить информацию о разделе "Departments" &ndash;&gt;-->
+<!--</section>-->
+
+<!--<section id="doctors">-->
+<!--    <h2>Doctors</h2>-->
+<!--    &lt;!&ndash; Здесь вы можете добавить информацию о разделе "Doctors" &ndash;&gt;-->
+<!--</section>-->
+
+<!--<section id="patients">-->
+<!--    <h2>Patients</h2>-->
+<!--    &lt;!&ndash; Здесь вы можете добавить информацию о разделе "Patients" &ndash;&gt;-->
+<!--</section>-->
+
+<!--<section id="appointments">-->
+<!--    <h2>Appointments</h2>-->
+<!--    &lt;!&ndash; Здесь вы можете добавить информацию о разделе "Appointments" &ndash;&gt;-->
+<!--</section>-->
+
+</body>
+
+
+
+<div>
+    <form th:method="DELETE"
+          th:action="@{/hospitals/{hospitalId}/delete (hospitalId=${hospital.getId()})}">
+        <input type="submit" class="btn btn-danger" th:value="Delete">
+    </form>
+
+    <a th:href="@{/hospitals/update/{hospitalId}(hospitalId=${hospital.getId()})}">
+        <input type="submit" class="btn btn-outline-success" th:value="Update">
+    </a>
+</div>
+
+</html>
